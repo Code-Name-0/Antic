@@ -1,0 +1,66 @@
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; // Prevent horizontal scrolling
+}
+
+body {
+  font-family: $font-varta;
+  line-height: 1.6;
+  background-color: $cream;
+  overflow-x: hidden; // Prevent horizontal scrolling
+  width: 100%;
+  max-width: 100vw; // Ensure body doesn't exceed viewport
+}
+
+.container-custom {
+  @include container;
+}
+
+// Section container with vertical padding
+.section-container {
+  @include container;
+  
+  // Move declarations before nested rules
+  & {
+    padding-top: $section-spacing;
+    padding-bottom: $section-spacing;
+  }
+  
+  @include mobile {
+    padding-top: calc($section-spacing / 2);
+    padding-bottom: calc($section-spacing / 2);
+  }
+}
+
+// Content container - for regular content sections
+.content-container {
+  @include container;
+  
+  // Move declarations before nested rules
+  & {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  @include mobile {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.section-spacing {
+  padding: $section-spacing 0;
+  
+  @include mobile {
+    padding: calc($section-spacing / 2) 0;
+  }
+}
+

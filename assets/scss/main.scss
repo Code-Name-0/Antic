@@ -1,0 +1,7 @@
+// Main SASS file
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'base' as *;
+
+// Import Tailwind (this will be handled by the Nuxt module)
+// But you can add custom styles here that work alongside Tailwind
