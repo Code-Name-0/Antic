@@ -5,3 +5,20 @@
 
 // Import Tailwind (this will be handled by the Nuxt module)
 // But you can add custom styles here that work alongside Tailwind
+
+// Global utility classes for responsive visibility
+.mobile-only {
+  display: block;
+  
+  @include desktop {
+    display: none !important;
+  }
+}
+
+.desktop-only {
+  display: none;
+  
+  @include desktop {
+    display: block !important;
+  }
+}

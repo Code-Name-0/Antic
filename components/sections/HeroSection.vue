@@ -7,16 +7,16 @@
           <span class="text-white uppercase">HOME DESIGN</span>
         </div>
         
-        <h1 class="hero-title text-white mb-6">
+        <h1 class="hero-title font-normal text-[35px] leading-10 tracking-[-0.3px] text-center w-[75%] text-white mb-6">
           Elegance for Interiors & Exteriors
         </h1>
         
-        <p class="hero-paragraph text-white mb-12">
+        <p class="hero-paragraph font-normal text-lg leading-[25px] tracking-[0px] text-center text-white mb-12">
           We provide everyone with modern, trendy, quality furniture
         </p>
         
-        <div class="scroll-icon">
-          <img :src="scrollDownIcon" alt="scroll down" class="scroll-image" />
+        <div class="scroll-icon cursor-pointer transition-transform duration-100 ease-in-out hover:translate-y-0.5">
+          <img :src="scrollDownIcon" alt="scroll down" class="scroll-image w-12 h-12 object-contain transition-all duration-100 ease-in-out hover:scale-[1.01]" />
         </div>
       </div>
     </div>
@@ -24,30 +24,30 @@
     <!-- Desktop: split layout -->
     <div class="hero-content-desktop hidden lg:flex h-full">
       <!-- Left half: Cream background with content -->
-      <div class="hero-left flex-1 bg-cream flex items-center">
+      <div class="hero-left flex-1 bg-cream flex items-center min-h-screen">
         <div class="hero-text-container">
           <div class="hero-text-content flex flex-col items-start text-left">
             <div class="hero-label mb-5">
-              <span class="text-primary uppercase">HOME DESIGN</span>
+              <span class="hero-label-text font-bold text-sm leading-5 tracking-wide text-center uppercase">HOME DESIGN</span>
             </div>
             
-            <h1 class="hero-title text-primary mb-6">
+            <h1 class="hero-title font-normal text-[35px] leading-10 tracking-[-0.3px] text-center w-1/2 text-primary mb-6">
               Elegance for Interiors & Exteriors
             </h1>
             
-            <p class="hero-paragraph text-secondary mb-12">
+            <p class="hero-paragraph font-normal text-lg leading-[25px] tracking-[0px] text-center text-secondary mb-12">
               We provide everyone with modern, trendy, quality furniture
             </p>
             
-            <div class="scroll-icon">
-              <img :src="scrollDownTerracottaIcon" alt="scroll down" class="scroll-image-desktop" />
+            <div class="scroll-icon cursor-pointer transition-transform duration-100 ease-in-out hover:translate-y-0.5">
+              <img :src="scrollDownTerracottaIcon" alt="scroll down" class="scroll-image-desktop w-10 h-10 object-contain transition-all duration-100 ease-in-out hover:scale-105 hover:opacity-80" />
             </div>
           </div>
         </div>
       </div>
 
       <!-- Right half: Hero image background -->
-      <div class="hero-right flex-1 hero-bg-image">
+      <div class="hero-right flex-1 hero-bg-image min-h-screen">
       </div>
     </div>
   </section>
@@ -59,17 +59,6 @@ import scrollDownTerracottaIcon from '~/assets/images/icons/scrollDown-terracott
 </script>
 
 <style lang="scss">
-
-.mobile-only {
-  @include mobile {
-    display: block;
-  }
-  
-  @include desktop {
-    display: none;
-  }
-}
-
 .hero-section {
   background-image: url('~/assets/images/backgrounds/hero_bg.jpg');
   background-size: cover;
@@ -81,7 +70,6 @@ import scrollDownTerracottaIcon from '~/assets/images/icons/scrollDown-terracott
   }
 }
 
-/* Desktop: Split background */
 .hero-bg-image {
   background-image: url('~/assets/images/backgrounds/hero_bg.jpg');
   background-size: cover;
@@ -89,37 +77,13 @@ import scrollDownTerracottaIcon from '~/assets/images/icons/scrollDown-terracott
   background-repeat: no-repeat;
 }
 
-.hero-left {
-  min-height: 100vh;
-}
-
-.hero-right {
-  min-height: 100vh;
-}
-
-/* Hero text container - aligns with site container */
 .hero-text-container {
-
   width: 50%;
-
   @include container;
-  
-  // Move declarations before nested rules
-
-  
-  // @include desktop {
-  //   padding-left: 0; // Ensure left alignment within the cream section
-  //   margin-left: 0;
-  // }
 }
 
-.hero-label span {
+.hero-label-text {
   font-family: $font-varta;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 1px;
-  text-align: center;
   
   @include desktop {
     color: $terracotta;
@@ -129,11 +93,6 @@ import scrollDownTerracottaIcon from '~/assets/images/icons/scrollDown-terracott
 
 .hero-title {
   font-family: $font-merriweather;
-  font-weight: 400;
-  font-size: 35px;
-  line-height: 40px;
-  letter-spacing: -0.3px;
-  text-align: center;
   
   @include desktop {
     text-align: left;
@@ -147,59 +106,12 @@ import scrollDownTerracottaIcon from '~/assets/images/icons/scrollDown-terracott
 
 .hero-paragraph {
   font-family: $font-varta;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 25px;
-  letter-spacing: 0px;
-  text-align: center;
   
-  /* Desktop adjustments */
   @include desktop {
     text-align: left;
     font-size: 22px;
     line-height: 30.8px;
     color: $brown-light;
-    // max-width: 400px;
   }
-}
-
-/* Scroll icon styles */
-.scroll-icon {
-  cursor: pointer;
-  transition: transform 0.1s ease;
-  
-  &:hover {
-    transform: translateY(2px);
-  }
-}
-
-/* Mobile scroll image */
-.scroll-image {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  transition: all 0.1s ease;
-  
-  &:hover {
-    transform: scale(1.01);
-  }
-}
-
-/* Desktop scroll image - smaller and terracotta colored */
-.scroll-image-desktop {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  transition: all 0.1s ease;
-  
-  &:hover {
-    transform: scale(1.05);
-    opacity: 0.8;
-  }
-}
-
-.down-arrow {
-  width: 16px;
-  height: 16px;
 }
 </style>
