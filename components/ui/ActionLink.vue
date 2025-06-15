@@ -1,18 +1,15 @@
 <template>
-
-<div class="action-link-container">
-
-    <a :href="href" class="action-link" :style="styles">
-        {{ text }}
-    </a>
-
-</div>
-
-
+    <div class="action-link-container flex justify-center items-center">
+        <a :href="href" class="action-link flex flex-row justify-center items-center gap-2" :style="styles">
+            {{ text }} 
+            <img :src="Right" alt="right arrow" class="w-1.5 h-2.5" />
+        </a>
+    </div>
 </template>
 
 <script setup>
 import { computed } from 'vue';
+import Right from '~/assets/images/icons/Right.svg';
 
 const props = defineProps({
   href: {
@@ -36,13 +33,12 @@ const styles = computed(() => {
 </script>
 
 <style lang="scss">
-.action-link-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .action-link{
+.action-link {
     color: $terracotta;
-  }
+    font-family: $font-karla;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.3px;
 }
 </style>

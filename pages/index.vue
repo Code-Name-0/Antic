@@ -1,11 +1,15 @@
 <template>
   <div class="landing-page-layout min-h-screen">
-    <main class="main-content relative z-[1]">
+    <main class="main-content relative z-[1] flex flex-col gap-10">
       <section class="hero-section relative h-screen">
         <SectionsHeroSection />
       </section>
 
-      <section class="services-section relative h-screen">
+      <section class="find-room-section relative">
+        <LayoutFindRoom />
+      </section>
+
+      <section class="services-section relative ">
         <LayoutServices />
       </section>
       
@@ -20,6 +24,8 @@
 </template>
 
 <script setup>
+import LayoutFindRoom from '~/components/layout/LayoutFindRoom.vue';
+
 </script>
 
 <style lang="scss">

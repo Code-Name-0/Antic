@@ -36,6 +36,6 @@ const styles = computed(() => {
 <style lang="scss">
 .links-title {
     font-family: $font-varta;
-    color: #121212;
+    color: $primary;
 }
 </style>

@@ -70,6 +70,10 @@ import scrollDownTerracottaIcon from '~/assets/images/icons/scrollDown-terracott
   }
 }
 
+.hero-text-content{
+  gap: 2rem;
+}
+
 .hero-bg-image {
   background-image: url('~/assets/images/backgrounds/hero_bg.jpg');
   background-size: cover;

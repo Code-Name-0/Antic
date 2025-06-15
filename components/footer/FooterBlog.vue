@@ -19,7 +19,7 @@
         </p>
       </div>
       <div class="action">
-        <UiActionLink href="#" text="Learn more >"/>
+        <UiActionLink href="#" text="Learn more"/>
       </div>
     </div>
 </template>

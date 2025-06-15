@@ -1,7 +1,7 @@
 <template>
 
 
-<div class="service-container">
+<div class="service-container flex flex-col gap-4 items-start">
     <div class="service-title">
         {{ title }}
     </div>
@@ -30,30 +30,22 @@ const props = defineProps({
 
 <style lang="scss">
 .service-container {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-
-    .service-title{
-        font-family: Varta;
+    .service-title {
+        font-family: $font-varta;
         font-weight: 600;
         font-size: 25px;
         line-height: 30px;
         letter-spacing: -0.2px;
-
         color: $terracotta;
     }
 
     .service-description {
-        font-family: Varta;
+        font-family: $font-varta;
         font-weight: 400;
         font-size: 18px;
         line-height: 25px;
         letter-spacing: 0px;
-        color: $brown-light;;
+        color: $brown-light;
     }
-        
-
-
 }
 </style>

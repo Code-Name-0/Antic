@@ -1,14 +1,13 @@
 <template>
   <div class="app-layout min-h-screen relative">
     <header class="absolute top-0 left-0 right-0 z-50 w-full">
-      <div class="header-container flex items-center justify-between">
+      <div class="header-container flex items-center justify-between pr-12 m-0">
         <div class="flex gap-32 items-center">
           <div class="desktop-only">
             <UiLogo />
           </div>
           <div class="mobile-only">
-
-            <UiLogo color="white"  />
+            <UiLogo color="white" />
           </div>
 
           <nav class="desktop-nav hidden">
@@ -21,8 +20,8 @@
           </nav>
         </div>
 
-        <div class="contact hidden">
-          <img :src="contactIcon" alt="contact" class="w-[50px] h-[50px] cursor-pointer" />
+        <div class="contact hidden cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105">
+          <img :src="contactIcon" alt="contact" class="w-[50px] h-[50px]" />
         </div>
 
         <div class="mobile-only cursor-pointer">
@@ -49,20 +48,15 @@ import contactIcon from '~/assets/images/icons/contact.svg';
 <style lang="scss">
 .header-container {
   @include container;
-  &{
-    padding-right: 3rem;
-    margin: 0;
+  @include desktop {
+    padding-right: 4rem;
   }
 }
 
 .contact {
   @include desktop {
     display: block !important;
-    
-    &:hover {
-      transform: scale(1.05);
-      transition: transform 0.3s ease-in-out;
-    }
+
   }
 }
 

@@ -13,6 +13,17 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
 
+  // Configure Google Fonts
+  fonts: {
+    google: {
+      families: {
+        Merriweather: [300, 400, 700],
+        Varta: [300, 400, 500, 600, 700], 
+        Karla: [300, 400, 500, 600, 700]
+      }
+    }
+  },
+
   css: [
   '~/assets/scss/main.scss'
 ],

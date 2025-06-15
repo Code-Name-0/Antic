@@ -7,7 +7,7 @@
             <div class="service-title flex flex-col items-start text-left gap-8">
                 <h2 class="text-2xl font-bold mb-4">We stay by your side to design your projects</h2>
                 
-                <UiActionLink href="#" text="Find out more >" />
+                <UiActionLink href="#" text="Find out more" />
             </div>
         </div>
 
@@ -29,19 +29,15 @@
     @include container;
 
     .service-title-container {
-
-        
-
         .service-title{
             h2{
-                color:$brown-dark;
+                color:$brown-light;
                 font-family: $font-merriweather;
                 font-weight: 400;
                 font-size: 35px;
                 line-height: 40px;
                 letter-spacing: -0.3px;
             }
-
         }
     }
 
@@ -51,6 +47,7 @@
         align-items: center;
         gap: 25rem;
         padding-top: 8rem;
+        padding-bottom: 6rem;
         .service-title-container{
         
             width: 50%;
