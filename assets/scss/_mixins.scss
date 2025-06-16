@@ -16,6 +16,12 @@
   }
 }
 
+@mixin medium {
+  @media (min-width: #{$tablet}) and (max-width: #{$desktop - 1px}) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media (min-width: #{$desktop}) {
     @content;
@@ -36,6 +42,10 @@
   }
   
   @include tablet {
+    padding: $container-y-padding 2.5rem; 
+  }
+  
+  @include medium {
     padding: $container-y-padding 3rem; 
   }
 }

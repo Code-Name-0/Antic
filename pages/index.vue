@@ -1,6 +1,6 @@
 <template>
   <div class="landing-page-layout min-h-screen">
-    <main class="main-content relative z-[1] flex flex-col gap-10">
+    <main class="main-content relative z-[1] flex flex-col">
       <section class="hero-section relative h-screen">
         <LayoutHeroSection />
       </section>
@@ -9,22 +9,17 @@
         <LayoutFindRoom />
       </section>
 
-      <section class="services-section relative ">
+      <section class="services-section relative">
         <LayoutServices />
       </section>
       
-      <div> 
-        <!-- I added this div to avoid the gap between the two sections, because these have white bg -->
-
-        <section class="subscribe-section relative"> 
-          <LayoutSubscribe />
-        </section>
-        
-        <section class="inspirations-section relative"> 
-          <LayoutInspirations />
-        </section>
-        
-      </div>
+      <section class="subscribe-section relative"> 
+        <LayoutSubscribe />
+      </section>
+      
+      <section class="inspirations-section relative"> 
+        <LayoutInspirations />
+      </section>
 
 
     </main>

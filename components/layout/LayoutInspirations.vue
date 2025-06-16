@@ -2,7 +2,7 @@
     <div class="inspirations-section-container bg-white">
 
         <div class="mobile-only">
-            <div class="mobile-layout flex flex-col gap-6">
+            <div class="mobile-layout flex flex-col gap-4">
                 
                 <div class="inspirations-title">
                     <h2 class="title-text font-normal text-[35px] leading-[40px] tracking-[-0.3px]">Inspirations</h2>
@@ -40,10 +40,19 @@
         </div>
 
         <div class="desktop-only">
-            <div class="desktop-layout flex flex-col gap-12">
+            <div class="desktop-layout flex flex-col gap-6">
                 
                 <div class="examples-slideshow">
-                    <div class="slideshow-container relative w-full overflow-hidden">
+                    <div 
+                        class="slideshow-container relative w-full overflow-hidden"
+                        @touchstart="handleTouchStart"
+                        @touchmove="handleTouchMove"
+                        @touchend="handleTouchEnd"
+                        @mousedown="handleMouseDown"
+                        @mousemove="handleMouseMove"
+                        @mouseup="handleMouseUp"
+                        @mouseleave="handleMouseUp"
+                    >
                         <div 
                             class="slideshow-track flex w-max h-full transition-transform duration-500 ease-in-out"
                             :style="{ transform: `translateX(-${currentSlide * slideWidth}vw)` }"
@@ -136,18 +145,85 @@ const examples = [
 ]
 
 const currentSlide = ref(0)
-const totalSlides = ref(examples.length - 1 - 1) // the extra -1 is because we see two images at a time, total - 1 is we see one
-const slideWidth = ref(30) // Each slide moves by 22vw
+const totalSlides = ref(examples.length - 2) // -2 because we show 2 images at a time
+const slideWidth = ref(30) // Each slide moves by 30vw
+
+// Touch/swipe variables
+const touchStartX = ref(0)
+const touchEndX = ref(0)
+const isDragging = ref(false)
+const isMouseDown = ref(false)
 
 const nextSlide = () => {
     if (currentSlide.value < totalSlides.value) {
         currentSlide.value++
+    } else {
+        currentSlide.value = 0 // Loop back to start
     }
 }
 
 const previousSlide = () => {
     if (currentSlide.value > 0) {
         currentSlide.value--
+    } else {
+        currentSlide.value = totalSlides.value // Loop to end
+    }
+}
+
+// Touch event handlers
+const handleTouchStart = (event) => {
+    touchStartX.value = event.touches[0].clientX
+    isDragging.value = true
+}
+
+const handleTouchMove = (event) => {
+    if (!isDragging.value) return
+    event.preventDefault()
+}
+
+const handleTouchEnd = (event) => {
+    if (!isDragging.value) return
+    
+    touchEndX.value = event.changedTouches[0].clientX
+    handleSwipe()
+    isDragging.value = false
+}
+
+// Mouse event handlers for desktop
+const handleMouseDown = (event) => {
+    touchStartX.value = event.clientX
+    isMouseDown.value = true
+    isDragging.value = true
+    event.preventDefault()
+}
+
+const handleMouseMove = (event) => {
+    if (!isMouseDown.value || !isDragging.value) return
+    event.preventDefault()
+}
+
+const handleMouseUp = (event) => {
+    if (!isMouseDown.value || !isDragging.value) return
+    
+    touchEndX.value = event.clientX
+    handleSwipe()
+    isMouseDown.value = false
+    isDragging.value = false
+}
+
+// Swipe logic
+const handleSwipe = () => {
+    const swipeThreshold = 50
+    const swipeDistance = touchStartX.value - touchEndX.value
+    
+    if (Math.abs(swipeDistance) > swipeThreshold) {
+        if (swipeDistance > 0) {
+            // Swiped left - go to next slide
+            nextSlide()
+        } else {
+            // Swiped right - go to previous slide
+            previousSlide()
+        }
     }
 }
 </script>
@@ -166,12 +242,21 @@ const previousSlide = () => {
         font-family: $font-merriweather;
         color: $brown-dark;
         
+        @include tablet {
+            font-size: 42px;
+            line-height: 46px;
+            letter-spacing: -0.35px;
+        }
     }
     
     .description-text {
         font-family: $font-varta;
         color: $brown-light;
         
+        @include tablet {
+            font-size: 19px;
+            line-height: 26px;
+        }
     }
     
     .label-text {

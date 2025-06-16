@@ -54,11 +54,21 @@ const handleClick = () => {
         font-family: $font-merriweather;
         color: $terracotta;
         
+        @include tablet {
+            font-size: 48px;
+            line-height: 52px;
+            letter-spacing: -0.5px;
+        }
     }
 
     .room-description {
         font-family: $font-varta;
         color: $brown-light;
-            }
+        
+        @include tablet {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
 }
 </style>

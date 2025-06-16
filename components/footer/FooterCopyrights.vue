@@ -1,6 +1,6 @@
 <template>
 
-<div class="copyrights flex flex-col justify-center items-center gap-4">
+<div class="copyrights flex flex-col justify-center items-center gap-12">
 
     
     <div class="social flex justify-center items-center gap-4">
@@ -10,16 +10,15 @@
         <img :src="InstagramIcon" alt="instagram" class="w-[35px] h-[35px] cursor-pointer" />
     </div>
 
-    <div class="legals flex flex-col gap-8 w-full lg:flex-row lg:justify-between lg:items-center lg:gap-4">
+    <div class="legals flex flex-col gap-6 w-full md:flex-row md:justify-between md:items-center md:gap-4 lg:flex-row lg:justify-between lg:items-center lg:gap-4">
         <div class="mobile-only">
-
-            <div class="flex justify-start items-center gap-8 flex-wrap lg:hidden">
+            <div class="flex justify-center items-center gap-x-6 gap-y-1 flex-wrap">
                 <span class="cursor-pointer whitespace-nowrap">Terms of Service</span>
                 <span class="cursor-pointer whitespace-nowrap">Privacy Policy</span>
                 <span class="cursor-pointer whitespace-nowrap">Language</span>
             </div>
         </div>
-        <div class="copyright font-normal text-lg leading-[25px] tracking-[0px]">
+        <div class="copyright font-normal text-lg leading-[25px] tracking-[0px] text-center md:text-left">
             © 2021 Agence Dnd
         </div>
 

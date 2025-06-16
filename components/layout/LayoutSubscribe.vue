@@ -3,9 +3,9 @@
 
       <div class="mobile-only">
 
-          <div class="mobile-layout flex flex-col items-center gap-6">
+          <div class="mobile-layout flex flex-col items-center gap-4">
 
-              <div class="content-section flex flex-col  gap-4 w-full">
+              <div class="content-section flex flex-col  gap-3 w-full">
                 <h2 class="subscribe-title font-normal text-[35px] leading-10 tracking-[-0.3px] text-left">Be aware of the latest trends</h2>
                 <p class="subscribe-description text-left">
                   Stay informed of new trends, but also of our various offers.
@@ -15,7 +15,7 @@
                 </div>
               </div>
               
-              <div class="form-section flex flex-col gap-4 w-full max-w-sm">
+              <div class="form-section flex flex-col gap-3 w-full max-w-sm">
                 <input 
                   type="email" 
                   placeholder="email@address.com" 
@@ -102,6 +102,12 @@ const handleSubscribe = () => {
     font-family: $font-merriweather;
     color: $primary-text;
     
+    @include tablet {
+        font-size: 32px;
+        line-height: 38px;
+        letter-spacing: -0.25px;
+        text-align: center;
+    }
     
     @include desktop {
         font-size: 35px;
@@ -115,6 +121,11 @@ const handleSubscribe = () => {
     font-family: $font-varta;
     color: $secondary-text;
     
+    @include tablet {
+        font-size: 19px;
+        line-height: 26px;
+        text-align: center;
+    }
     
     @include desktop {
         font-size: 20px;

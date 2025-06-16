@@ -33,7 +33,7 @@
       </div>
 
       <Transition name="mobile-menu">
-        <div v-if="isMobileMenuOpen" class="mobile-nav-dropdown mobile-only absolute top-[calc(100%-2rem)] left-0 right-0 z-40">
+        <div v-if="isMobileMenuOpen" class="mobile-nav-dropdown mobile-only absolute top-full left-0 right-0 z-40">
           <div class="mobile-nav-content">
             <nav class="mobile-nav">
               <ul class="flex flex-col gap-6 p-0 m-0 list-none">
@@ -57,43 +57,59 @@
 </template>
 
 <script setup>
-import contactIcon from '~/assets/images/icons/contact.svg';
+import { ref, onMounted, onUnmounted } from 'vue'
+import contactIcon from '~/assets/images/icons/contact.svg'
 
-const isMobileMenuOpen = ref(false);
+const isMobileMenuOpen = ref(false)
 
 const toggleMobileMenu = () => {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value;
-};
+  isMobileMenuOpen.value = !isMobileMenuOpen.value
+}
 
 const closeMobileMenu = () => {
-  isMobileMenuOpen.value = false;
-};
+  isMobileMenuOpen.value = false
+}
 
 onMounted(() => {
   const handleClickOutside = (event) => {
-    const mobileMenu = document.querySelector('.mobile-nav-dropdown');
-    const hamburger = document.querySelector('.mobile-only.cursor-pointer');
+    const mobileMenu = document.querySelector('.mobile-nav-dropdown')
+    const hamburger = document.querySelector('.mobile-only.cursor-pointer')
     
     if (isMobileMenuOpen.value && mobileMenu && hamburger) {
       if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
-        closeMobileMenu();
+        closeMobileMenu()
       }
     }
-  };
-  
-  document.addEventListener('click', handleClickOutside);
+  }
+
+  document.addEventListener('click', handleClickOutside)
   
   onUnmounted(() => {
-    document.removeEventListener('click', handleClickOutside);
-  });
-});
+    document.removeEventListener('click', handleClickOutside)
+  })
+})
 </script>
 
 <style lang="scss">
 .header-container {
   @include container;
+  
   @include desktop {
     padding-right: 4rem;
+  }
+  
+  // Fix for 1024-1550px range
+  @media (min-width: 1024px) and (max-width: 1550px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    
+    .flex.gap-25 {
+      gap: 1rem;
+    }
+    
+    .desktop-nav ul {
+      gap: 1.5rem;
+    }
   }
 }
 
@@ -134,7 +150,6 @@ onMounted(() => {
   .mobile-nav-content {
     @include container;
     &{
-
       padding-top: 2rem;
       padding-bottom: 2rem;
     }

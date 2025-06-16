@@ -30,7 +30,7 @@
 .footer-container {
   @include container;
   
-  
+  padding-top: 4rem;
   .footer-content {
     
     @include desktop {
