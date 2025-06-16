@@ -2,7 +2,7 @@
     <div class="layout-services flex flex-col items-center justify-center gap-10">
         <div class="service-title-container flex flex-col items-start justify-center">
             <div class="service-title flex flex-col items-start text-left gap-8">
-                <h2 class="service-title-text font-normal text-[35px] leading-10 tracking-[-0.3px] mb-4">We stay by your side to design your projects</h2>
+                <h2 class="service-title-text font-normal text-[35px] tracking-[-0.3px] mb-4">We stay by your side to design your projects</h2>
                 
                 <UiActionLink href="#" text="Find out more" />
             </div>
@@ -30,7 +30,7 @@
             .service-title-text {
                 color: $brown-light;
                 font-family: $font-merriweather;
-                
+                line-height: 2.5rem; // equivalent to leading-10
             }
         }
     }
@@ -50,7 +50,7 @@
                 .service-title-text {
                     font-family: $font-merriweather;
                     font-size: 60px;
-                    line-height: 50px;
+                    line-height: 1.3 !important;
                     letter-spacing: -0.6px;
                 }
             }
