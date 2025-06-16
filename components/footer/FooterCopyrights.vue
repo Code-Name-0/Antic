@@ -51,9 +51,8 @@ import LinkedInIcon from '~/assets/images/icons/Linkedin.svg';
 }
 
 .copyrights-container {
-  // Below 400px - left align everything (matches footer links single column breakpoint)
+  // Below 400px - left align only text elements, keep socials centered
   @media (max-width: 399px) {
-    align-items: flex-start !important;
     
     .mobile-legals {
       width: 100%;
