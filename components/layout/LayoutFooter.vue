@@ -31,6 +31,7 @@
   @include container;
   
   padding-top: 4rem;
+  padding-bottom: 2rem;
   .footer-content {
     
     @include desktop {

@@ -77,8 +77,8 @@
   @media (min-width: 400px) and (max-width: 639px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 6rem;
-    justify-items: start;
+    gap: 3rem;
+    justify-items: center;
     justify-content: center;
     width: 100%;
     max-width: 100%;
@@ -95,7 +95,6 @@
       text-align: left !important;
       display: flex !important;
       flex-direction: column !important;
-      width: 100% !important;
     }
   }
   
@@ -103,8 +102,8 @@
   @media (min-width: 640px) and (max-width: 767px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 7rem;
-    justify-items: start;
+    gap: 4rem;
+    justify-items: center;
     justify-content: center;
     margin: 0 auto;
     
@@ -118,30 +117,6 @@
       text-align: left !important;
       display: flex !important;
       flex-direction: column !important;
-      width: 100% !important;
-    }
-  }
-  
-  // Special layout for 1024px-1217px: Two columns under logo
-  @media (min-width: 1024px) and (max-width: 1217px) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 6rem;
-    justify-items: start;
-    justify-content: center;
-    margin: 0 auto;
-    
-    > * {
-      width: 100%;
-      max-width: 100%;
-    }
-    
-    .nav-links-item {
-      align-items: flex-start !important;
-      text-align: left !important;
-      display: flex !important;
-      flex-direction: column !important;
-      width: 100% !important;
     }
   }
 }

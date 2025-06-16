@@ -9,6 +9,7 @@
         </div>
 
         <div class="services-container">
+
             <ServicesMain />
         </div>
     </div>
@@ -73,7 +74,7 @@
         align-items: center;
         gap: 4rem;
         padding-top: 3rem;
-        padding-bottom: 3rem;
+        padding-bottom: 4rem;
         
         .service-title-container {
             width: 50%;

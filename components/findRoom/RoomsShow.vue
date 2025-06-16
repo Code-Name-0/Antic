@@ -25,7 +25,7 @@
             </Transition>
         </div>
         
-        <div class="controls flex items-center py-4 max-w-[500px] md:max-w-[600px] mx-auto w-full lg:absolute lg:left-[-25%] lg:bottom-[-20%] lg:w-[30%] lg:z-10">
+        <div class="controls flex items-center py-4 max-w-[500px] md:max-w-[600px] mx-auto w-full lg:absolute lg:left-[-20%] lg:bottom-[-20%] lg:w-[60%] lg:z-10">
             <!-- Mobile layout: button left, counter right -->
             <div class="mobile-controls flex items-center justify-between w-full lg:hidden">
                 <UiButton 
@@ -43,10 +43,12 @@
             </div>
             
             <!-- Desktop layout: counter left, button right -->
-            <div class="desktop-controls hidden lg:flex items-center justify-between w-full">
+            <div class="desktop-controls hidden lg:flex items-center w-full">
                 <div class="pages font-normal text-lg leading-[25px] tracking-[0px]">
                     <p>{{ currentPage }} / {{ totalPages }}</p>
                 </div>
+                
+                <div style="width: 45%;"></div>
                 
                 <UiButton 
                     :disabled="false" 

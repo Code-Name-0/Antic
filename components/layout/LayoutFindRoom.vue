@@ -1,5 +1,5 @@
 <template>
-    <div class="find-room-container flex flex-col gap-1">
+    <div class="find-room-container flex flex-col gap-6">
         <div class="title">
             <p class="title-text font-normal text-[35px] leading-10 tracking-[-0.3px]">Find your room</p>
         </div>
@@ -40,7 +40,7 @@
     }
 
     @include tablet {
-        gap: 1.5rem;
+        gap: 2rem;
 
         .title {
             .title-text {
@@ -56,7 +56,7 @@
     }
     
     @include medium {
-        gap: 1.25rem;
+        gap: 2.5rem;
 
         .title {
             .title-text {
@@ -72,7 +72,7 @@
     }
 
     @include desktop {
-        gap: 1rem;
+        gap: 3rem;
 
         .title {
             .title-text {

@@ -34,11 +34,11 @@
 @mixin container {
   margin: 0 auto; 
   width: 100%;
-  padding: $container-y-padding $container-x-padding;
+  padding: $container-padding;
   // padding-right: 3rem;
     
   @include mobile {
-    padding: $container-y-padding 2rem; 
+    padding: 4rem 2rem 2rem 2rem; 
   }
   
   @include tablet {

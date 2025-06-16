@@ -13,6 +13,7 @@
                         Our experts are keen to stay on top of trends in order to offer you new inspirations for your interior and exterior every day. Remember that to inspire you we have to inspire ourselves and we want to share that with you.
                     </p>
                 </div>
+
                 <div class="examples">
                     <div class="examples-grid grid grid-cols-2 gap-8 max-w-sm mx-auto">
                         <div 
@@ -40,7 +41,8 @@
         </div>
 
         <div class="desktop-only">
-            <div class="desktop-layout flex flex-col gap-6">
+            <div class="desktop-layout flex flex-col gap-16">
+
                 
                 <div class="examples-slideshow">
                     <div 

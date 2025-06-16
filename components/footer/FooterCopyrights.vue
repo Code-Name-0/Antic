@@ -1,6 +1,6 @@
 <template>
 
-<div class="copyrights flex flex-col justify-center items-center gap-12 copyrights-container">
+<div class="copyrights flex flex-col justify-center items-center gap-12">
 
     
     <div class="social flex justify-center items-center gap-4">
@@ -11,14 +11,14 @@
     </div>
 
     <div class="legals flex flex-col gap-6 w-full md:flex-row md:justify-between md:items-center md:gap-4 lg:flex-row lg:justify-between lg:items-center lg:gap-4">
-        <div class="mobile-only mobile-legals">
+        <div class="mobile-only">
             <div class="flex justify-center items-center gap-x-6 gap-y-1 flex-wrap">
                 <span class="cursor-pointer whitespace-nowrap">Terms of Service</span>
                 <span class="cursor-pointer whitespace-nowrap">Privacy Policy</span>
                 <span class="cursor-pointer whitespace-nowrap">Language</span>
             </div>
         </div>
-        <div class="copyright font-normal text-lg leading-[25px] tracking-[0px] text-center md:text-left copyright-text">
+        <div class="copyright font-normal text-lg leading-[25px] tracking-[0px] text-center md:text-left">
             © 2021 Agence Dnd
         </div>
 
@@ -48,24 +48,7 @@ import LinkedInIcon from '~/assets/images/icons/Linkedin.svg';
 .copyrights {
     font-family: $font-varta;
     color: $secondary-text;
-}
-
-.copyrights-container {
-  // Below 400px - left align only text elements, keep socials centered
-  @media (max-width: 399px) {
     
-    .mobile-legals {
-      width: 100%;
-      
-      > div {
-        justify-content: flex-start !important;
-        align-items: flex-start !important;
-      }
-    }
-    
-    .copyright-text {
-      text-align: left !important;
-    }
-  }
+ 
 }
 </style>

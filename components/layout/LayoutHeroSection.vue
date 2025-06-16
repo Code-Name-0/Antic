@@ -15,7 +15,7 @@
             We provide everyone with modern, trendy, quality furniture
           </p>
         
-        <div class="scroll-icon cursor-pointer transition-transform duration-100 ease-in-out hover:translate-y-0.5 mt-2">
+        <div class="scroll-icon cursor-pointer transition-transform duration-100 ease-in-out hover:translate-y-0.5 mt-2" @click="scrollToNextSection">
           <img :src="scrollDownIcon" alt="scroll down" class="scroll-image w-12 h-12 object-contain transition-all duration-100 ease-in-out hover:scale-[1.01]" />
         </div>
       </div>
@@ -37,7 +37,7 @@
               We provide everyone with modern, trendy, quality furniture
             </p>
             
-            <div class="scroll-icon cursor-pointer transition-transform duration-100 ease-in-out hover:translate-y-0.5">
+            <div class="scroll-icon cursor-pointer transition-transform duration-100 ease-in-out hover:translate-y-0.5" @click="scrollToNextSection">
               <img :src="scrollDownTerracottaIcon" alt="scroll down" class="scroll-image-desktop w-10 h-10 object-contain transition-all duration-100 ease-in-out hover:scale-105 hover:opacity-80" />
             </div>
           </div>
@@ -53,6 +53,16 @@
 <script setup>
 import scrollDownIcon from '~/assets/images/icons/scrollDown.svg'
 import scrollDownTerracottaIcon from '~/assets/images/icons/scrollDown-terracotta.svg'
+
+const scrollToNextSection = () => {
+  const findRoomSection = document.querySelector('.find-room-section')
+  if (findRoomSection) {
+    findRoomSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+}
 </script>
 
 <style lang="scss">

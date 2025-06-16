@@ -33,7 +33,7 @@
       </div>
 
       <Transition name="mobile-menu">
-        <div v-if="isMobileMenuOpen" class="mobile-nav-dropdown mobile-only absolute top-full left-0 right-0 z-40">
+        <div v-if="isMobileMenuOpen" class="mobile-nav-dropdown mobile-only fixed top-20 left-0 right-0 z-40">
           <div class="mobile-nav-content">
             <nav class="mobile-nav">
               <ul class="flex flex-col gap-6 p-0 m-0 list-none">
@@ -93,15 +93,17 @@ onMounted(() => {
 <style lang="scss">
 .header-container {
   @include container;
-  
+  padding-top: 2rem !important;
+
   @include desktop {
     padding-right: 4rem;
+    padding-top: 1rem !important;
   }
   
-  // Fix for 1024-1550px range
   @media (min-width: 1024px) and (max-width: 1550px) {
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-top: 1rem !important;
     
     .flex.gap-25 {
       gap: 1rem;
