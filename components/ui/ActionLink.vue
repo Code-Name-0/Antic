@@ -1,6 +1,6 @@
 <template>
     <div class="action-link-container flex justify-center items-center">
-        <a :href="href" class="action-link flex flex-row justify-center items-center gap-2" :style="styles">
+        <a :href="href" class="action-link font-bold text-xl leading-[25px] tracking-[0.3px] flex flex-row justify-center items-center gap-2" :style="styles">
             {{ text }} 
             <img :src="Right" alt="right arrow" class="w-1.5 h-2.5" />
         </a>
@@ -33,12 +33,12 @@ const styles = computed(() => {
 </script>
 
 <style lang="scss">
+.action-link-container{
+  width: fit-content;
+}
 .action-link {
     color: $terracotta;
     font-family: $font-karla;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 25px;
-    letter-spacing: 0.3px;
+
 }
 </style>

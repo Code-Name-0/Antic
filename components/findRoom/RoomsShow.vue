@@ -1,22 +1,23 @@
 <template>
-    <div class="rooms-show-container flex flex-col relative">
-        <div class="room-cards flex-1 flex flex-col justify-center relative overflow-hidden min-w-[300px] mx-auto">
+    <div class="rooms-show-container flex flex-col relative h-80 lg:h-auto lg:min-h-80">
+        <div class="room-cards flex-1 flex flex-col justify-center relative overflow-hidden min-w-[300px] mx-auto max-w-[500px] lg:max-w-none lg:mx-0">
             <Transition name="slide" mode="out-in">
-                <div :key="currentPage" class="cards-grid flex gap-4 flex-col items-center">
+                <div :key="currentPage" class="cards-grid flex gap-4 flex-col items-center lg:flex-row lg:justify-start lg:items-stretch">
                     <FindRoomCard 
                         v-for="room in currentRooms"
                         :key="room.id"
                         :room-description="room.description" 
                         :room-image="room.image" 
                         :room-name="room.name"
-                        :room-url="room.url" 
+                        :room-url="room.url"
+                        class="lg:flex-1 lg:max-w-[calc(50%-0.5rem)]"
                     />
                 </div>
             </Transition>
         </div>
         
-        <div class="controls flex items-center justify-between py-4 max-w-[500px] mx-auto w-full">
-            <div class="pages">
+        <div class="controls flex items-center justify-between py-4 max-w-[500px] mx-auto w-full lg:absolute lg:left-[-25%] lg:bottom-[-20%] lg:w-[30%] lg:z-10">
+            <div class="pages font-normal text-lg leading-[25px] tracking-[0px]">
                 <p>{{ currentPage }} / {{ totalPages }}</p>
             </div>
             
@@ -70,7 +71,7 @@ onUnmounted(() => {
 })
 
 const updateItemsPerPage = () => {
-    const isDesktop = window.innerWidth >= 1024 // $desktop breakpoint defined in _variables.scss
+    const isDesktop = window.innerWidth >= 1024 // lg: breakpoint in Tailwind (matches @include desktop)
     itemsPerPage.value = isDesktop ? 2 : 1
     
     if (currentPage.value > Math.ceil(rooms.value.length / itemsPerPage.value)) {
@@ -90,37 +91,8 @@ const nextPage = () => {
 </script>
 
 <style lang="scss"> 
-
 .rooms-show-container {
-    height: 20rem; 
-    
-    @include desktop {
-        height: auto;
-        min-height: 20rem;
-    }
-    
-    .room-cards {
-        max-width: 500px;
-        
-        @include desktop {
-            max-width: none;
-            margin: 0;
-        }
-        
-        .cards-grid {
-            @include desktop {
-                flex-direction: row;
-                justify-content: flex-start;
-                align-items: stretch;
-                
-                > * {
-                    flex: 1;
-                    max-width: calc(50% - 0.5rem);
-                }
-            }
-        }
-    }
-
+   
     .slide-enter-active,
     .slide-leave-active {
         transition: transform 0.3s ease-in-out;
@@ -140,23 +112,12 @@ const nextPage = () => {
     }
 
     .controls {
-        @include desktop {
-            position: absolute;
-            left: -25%;
-            bottom: -20%;
-            width: 30%;
-            z-index: 10;
-        }
-
+      
         .pages {
             font-family: $font-varta;
             color: $brown-light;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 25px;
-            letter-spacing: 0px;
+            
         }
     }
 }
-
 </style>

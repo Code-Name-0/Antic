@@ -6,10 +6,9 @@
         <h2 class="font-semibold text-[25px] leading-[30px] tracking-[-0.2px]">We respect our planet</h2>
       </div>
       <div class="blog-image">
-        <NuxtImg 
+        <img 
           src="/images/blog/post-1.jpg" 
           alt="Blog post"
-          loading="lazy"
           class="w-full max-w-[600px] shadow-md"
         />
       </div>
@@ -32,10 +31,13 @@
 .blog-title {
   font-family: $font-varta;
   color: $brown-dark;
+  
 }
 
 .post-text {
   font-family: $font-varta;
   color: $secondary-text;
+  
 }
+
 </style>

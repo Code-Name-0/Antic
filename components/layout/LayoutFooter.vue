@@ -21,20 +21,23 @@
 
 <style lang="scss">
 .site-footer {
+  
   background-color: $cream;
   color: $text-white;
+  
 }
 
 .footer-container {
   @include container;
-  .footer-content{
+  
+  
+  .footer-content {
+    
     @include desktop {
       flex-direction: row;
       justify-content: space-between;
       align-items: start;
-      gap:4rem;
-      
-      
+      gap: 4rem;
     }
   }
 }

@@ -1,14 +1,18 @@
 <template>
-    <div class="action-button-container flex justify-center items-center">
-        <button @click="handleClick" class="action-button bg-transparent border-none cursor-pointer" :style="styles" :disabled="disabled">
-            <slot>
-                <div class="button-content flex flex-row justify-center items-center gap-2">
-                    {{ text }} 
-                    <img :src="Right" alt="right arrow" class="arrow-icon w-1.5 h-2.5" />
-                </div>
-            </slot>
-        </button>
-    </div>
+  <button 
+    @click="handleClick" 
+    :class="buttonClasses" 
+    :disabled="disabled"
+    class="cursor-pointer transition-all duration-300"
+  >
+    <slot>
+      <div v-if="variant === 'link'" class="flex items-center justify-center gap-2">
+        {{ text }}
+        <img :src="Right" alt="right arrow" class="w-1.5 h-2.5" />
+      </div>
+      <span v-else>{{ text }}</span>
+    </slot>
+  </button>
 </template>
 
 <script setup>
@@ -20,53 +24,80 @@ const props = defineProps({
     type: String,
     default: 'Click here'
   },
-  onClick: {
-    type: Function,
-    required: true
-  },
   disabled: {
     type: Boolean,
     default: false
   },
-  color: {
+  variant: {
     type: String,
-    default: null
+    default: 'link', 
+    validator: (value) => ['link', 'filled'].includes(value)
+  },
+  customClass: {
+    type: String,
+    default: ''
   }
 });
 
-const styles = computed(() => {
-  const styleObj = {};
+const emit = defineEmits(['click']);
+
+const buttonClasses = computed(() => {
+  const baseClasses = [];
   
-  if (props.color) {
-    styleObj.color = props.color;
+  if (props.variant === 'link') {
+    baseClasses.push('button-link', 'bg-transparent', 'border-none', 'font-bold', 'text-xl', 'leading-[25px]', 'tracking-[0.3px]', 'rounded-none');
+  } else {
+    baseClasses.push('button-filled', 'border-none', 'text-white', 'font-bold', 'text-[17px]', 'leading-[25px]', 'tracking-[0.3px]', 'px-3', 'h-[50px]', 'gap-[10px]', 'flex', 'items-center', 'justify-center', 'rounded-none');
   }
   
-  return styleObj;
+  if (props.customClass) {
+    baseClasses.push(props.customClass);
+  }
+  
+  return baseClasses.join(' ');
 });
 
 const handleClick = () => {
-  if (!props.disabled && props.onClick) {
-    props.onClick();
+  if (!props.disabled) {
+    emit('click');
   }
 };
 </script>
 
 <style lang="scss">
-.action-button {
-    color: $terracotta;
-    font-family: $font-karla;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 25px;
-    letter-spacing: 0.3px;
-    
-    &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-    }
-    
-    &:hover:not(:disabled) {
-        opacity: 0.8;
-    }
+
+.button-link {
+  color: $terracotta;
+  font-family: $font-karla;
+  
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  &:hover:not(:disabled) {
+    opacity: 0.8;
+  }
+}
+
+.button-filled {
+  font-family: $font-karla;
+  background-color: $brown-dark;
+  
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  &:hover:not(:disabled) {
+    background-color: $terracotta;
+    transform: translateY(-1px);
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
 }
 </style>

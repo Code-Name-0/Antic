@@ -15,12 +15,12 @@
 
 <style lang="scss">
 .services-main-container {
+    
     @include desktop {
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 3rem;
         row-gap: 2rem;
-        // width: 100%;
     }
 }
 </style>

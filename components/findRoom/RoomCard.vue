@@ -1,6 +1,6 @@
 <template>
-    <div class="room-card w-full relative flex cursor-pointer transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:opacity-90" @click="handleClick">
-        <div class="room-title absolute top-0 left-1/4 z-10 flex items-center justify-center w-1/2 h-full text-center">
+    <div class="room-card w-full relative flex cursor-pointer transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:opacity-90 h-[30vh] md:h-[40vh]" @click="handleClick">
+        <div class="room-title absolute top-0 left-1/4 z-10 flex items-center justify-center w-1/2 h-full text-center font-normal text-[35px] leading-[40px] tracking-[-0.3px] md:text-[55px] md:leading-[60px] md:tracking-[-0.6px]">
             <h4>{{ roomName }}</h4>
         </div>
         <div 
@@ -10,7 +10,7 @@
         
         <div class="text-half w-1/2 flex items-start justify-start px-8 bg-transparent">
             <div class="text-content text-left">
-                <p class="room-description">{{ roomDescription }}</p>
+                <p class="room-description font-normal text-base leading-[22px] tracking-[0px]">{{ roomDescription }}</p>
             </div>
         </div>
     </div>
@@ -38,11 +38,9 @@ const props = defineProps({
 });
 
 const handleClick = () => {
-    // Navigate to the room URL or emit an event
     if (props.roomUrl && props.roomUrl !== '#') {
         navigateTo(props.roomUrl);
     } else {
-        // Emit event for parent to handle
         console.log(`Clicked on room: ${props.roomName}`);
     }
 };
@@ -51,34 +49,16 @@ const handleClick = () => {
 
 <style lang="scss">
 .room-card {
-    height: 30vh; 
-
-    @include desktop {
-        height: 40vh;
-    } 
 
     .room-title {
         font-family: $font-merriweather;
         color: $terracotta;
-        font-weight: 400;
-        font-size: 35px;
-        line-height: 40px;
-        letter-spacing: -0.3px;
-
-        @include desktop {
-            font-size: 55px;
-            line-height: 60px;
-            letter-spacing: -0.6px;
-        }
+        
     }
 
     .room-description {
         font-family: $font-varta;
         color: $brown-light;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 22px;
-        letter-spacing: 0px;
-    }
+            }
 }
 </style>

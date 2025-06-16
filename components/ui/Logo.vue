@@ -10,7 +10,6 @@
 <script setup>
 import { computed } from 'vue'
 
-// Props for controlling logo color
 const props = defineProps({
   color: {
     type: String,
@@ -18,7 +17,6 @@ const props = defineProps({
   }
 })
 
-// Computed styles - parent color overrides default
 const logoStyles = computed(() => {
   const styles = {}
   

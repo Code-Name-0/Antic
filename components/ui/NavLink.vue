@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-// Props for menu item
+
 const props = defineProps({
   label: {
     type: String,
@@ -24,6 +24,7 @@ const props = defineProps({
 .menu-link {
   font-family: $font-varta;
   color: $brown-light;
+  
   
   &:hover {
     opacity: 0.8;

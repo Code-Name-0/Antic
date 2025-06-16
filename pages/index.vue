@@ -2,7 +2,7 @@
   <div class="landing-page-layout min-h-screen">
     <main class="main-content relative z-[1] flex flex-col gap-10">
       <section class="hero-section relative h-screen">
-        <SectionsHeroSection />
+        <LayoutHeroSection />
       </section>
 
       <section class="find-room-section relative">
@@ -13,12 +13,20 @@
         <LayoutServices />
       </section>
       
+      <div> 
+        <!-- I added this div to avoid the gap between the two sections, because these have white bg -->
 
-      
-      <section class="content-container bg-gray-100">
-        <h2 class="text-2xl font-bold mb-4">We are by your side</h2>
-        <p class="text-gray-800">This section also follows the same container alignment.</p>
-      </section>
+        <section class="subscribe-section relative"> 
+          <LayoutSubscribe />
+        </section>
+        
+        <section class="inspirations-section relative"> 
+          <LayoutInspirations />
+        </section>
+        
+      </div>
+
+
     </main>
   </div>
 </template>

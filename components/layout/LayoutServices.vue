@@ -1,11 +1,8 @@
 <template>
-
-    <div class="layout-services flex flex-col items-center justify-center gap-10 ">
-
-
+    <div class="layout-services flex flex-col items-center justify-center gap-10">
         <div class="service-title-container flex flex-col items-start justify-center">
             <div class="service-title flex flex-col items-start text-left gap-8">
-                <h2 class="text-2xl font-bold mb-4">We stay by your side to design your projects</h2>
+                <h2 class="service-title-text font-normal text-[35px] leading-10 tracking-[-0.3px] mb-4">We stay by your side to design your projects</h2>
                 
                 <UiActionLink href="#" text="Find out more" />
             </div>
@@ -14,10 +11,7 @@
         <div class="services-container">
             <ServicesMain />
         </div>
-        
-
     </div>
-
 </template>
 
 <script setup>
@@ -27,16 +21,16 @@
 .layout-services {
     background-color: $cream;
     @include container;
+    
 
     .service-title-container {
-        .service-title{
-            h2{
-                color:$brown-light;
+        
+        .service-title {
+            
+            .service-title-text {
+                color: $brown-light;
                 font-family: $font-merriweather;
-                font-weight: 400;
-                font-size: 35px;
-                line-height: 40px;
-                letter-spacing: -0.3px;
+                
             }
         }
     }
@@ -48,21 +42,21 @@
         gap: 25rem;
         padding-top: 8rem;
         padding-bottom: 6rem;
-        .service-title-container{
         
+        .service-title-container {
             width: 50%;
 
             .service-title {
-                h2{
-                    font-family: Meriweather;
+                .service-title-text {
+                    font-family: $font-merriweather;
                     font-size: 60px;
                     line-height: 50px;
                     letter-spacing: -0.6px;
                 }
             }
-        
         }
-        .services-container{
+        
+        .services-container {
             width: 75%;
         }
     }
