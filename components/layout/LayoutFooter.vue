@@ -32,6 +32,17 @@
   
   padding-top: 4rem;
   padding-bottom: 2rem;
+  
+  @include tablet {
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  @include desktop {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+  
   .footer-content {
     
     @include desktop {

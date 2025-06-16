@@ -48,4 +48,8 @@
   @include medium {
     padding: $container-y-padding 3rem; 
   }
+  
+  @include desktop {
+    padding: $container-y-padding $container-x-padding; 
+  }
 }

@@ -17,13 +17,13 @@ $font-karla: 'Karla', sans-serif;
 
 $section-spacing: 5rem;
 
-$container-x-padding: 8rem;
+$container-x-padding: 10rem;
 
 $container-y-padding: 6rem ;
 $container-top-padding: 4rem;
 $container-bottom-padding: 8rem;
 
-$container-padding: $container-top-padding $container-y-padding $container-bottom-padding $container-y-padding; 
+$container-padding: $container-top-padding $container-x-padding $container-bottom-padding $container-x-padding; 
 
 $mobile: 640px;
 $tablet: 768px;

@@ -28,9 +28,21 @@
 </script>
 
 <style lang="scss">
+.blog-container {
+  // Left alignment for screens below 400px
+  @media (max-width: 399px) {
+    align-items: flex-start !important;
+  }
+}
+
 .blog-title {
   font-family: $font-varta;
   color: $brown-dark;
+  
+  // Left alignment for screens below 400px
+  @media (max-width: 399px) {
+    text-align: left !important;
+  }
   
   @include desktop {
     max-width: 400px;
@@ -40,15 +52,30 @@
 .post-text {
   font-family: $font-varta;
   color: $secondary-text;
+  
+  // Left alignment for screens below 400px
+  @media (max-width: 399px) {
+    text-align: left !important;
+  }
 }
 
 .action {
+  // Left alignment for screens below 400px
+  @media (max-width: 399px) {
+    justify-content: flex-start !important;
+  }
+  
   @include desktop {
     max-width: 400px;
   }
 }
 
 .blog-image {
+  // Left alignment for screens below 400px
+  @media (max-width: 399px) {
+    justify-content: flex-start !important;
+  }
+  
   img {
     @include desktop {
       max-width: 400px;
