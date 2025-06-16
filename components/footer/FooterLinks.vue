@@ -1,7 +1,7 @@
 <template>
-  <div class="links-container flex flex-col gap-6 text-center md:flex-row md:flex-wrap md:justify-center md:gap-8 md:text-left lg:flex-row lg:justify-between lg:items-start lg:gap-12">
+  <div class="links-container flex flex-col gap-6 text-left md:flex-row md:flex-wrap md:justify-center md:gap-8 lg:flex-row lg:justify-between lg:items-start lg:gap-12 lg:text-left">
 
-    <UiNavLinks title="About">
+    <UiNavLinks title="About" class="nav-links-item">
       <div class="links-list-container">
         <ul class="flex flex-col gap-1 md:gap-2 lg:gap-3">
           <UiNavLink label="Our story" />
@@ -11,7 +11,7 @@
       </div>
     </UiNavLinks>
 
-    <UiNavLinks title="Services">
+    <UiNavLinks title="Services" class="nav-links-item">
       <div class="links-list-container">
         <ul class="flex flex-col gap-1 md:gap-2 lg:gap-3">
           <UiNavLink label="Click and collect" />
@@ -23,7 +23,7 @@
       </div>
     </UiNavLinks>
 
-    <UiNavLinks title="Products">
+    <UiNavLinks title="Products" class="nav-links-item">
       <div class="links-list-container">
         <ul class="flex flex-col gap-1 md:gap-2 lg:gap-3">
           <UiNavLink label="Furniture" />
@@ -35,7 +35,7 @@
       </div>
     </UiNavLinks>
 
-    <UiNavLinks title="Rooms">
+    <UiNavLinks title="Rooms" class="nav-links-item">
       <div class="links-list-container">
         <ul class="flex flex-col gap-1 md:gap-2 lg:gap-3">
           <UiNavLink label="Living room" />
@@ -58,42 +58,88 @@
 
 <style lang="scss">
 .links-container {
+  // Single column layout - left aligned
   @media (max-width: 399px) {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    text-align: left;
     align-items: flex-start;
     width: 100%;
     padding: 0 1rem;
+    
+    .nav-links-item {
+      align-items: flex-start !important;
+      text-align: left !important;
+    }
   }
   
+  // Two column layout - columns centered, text left-aligned
   @media (min-width: 400px) and (max-width: 639px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    text-align: center;
+    gap: 3rem;
     justify-items: center;
+    justify-content: center;
     width: 100%;
     max-width: 100%;
     padding: 0 1rem;
+    margin: 0 auto;
     
     > * {
       width: 100%;
       max-width: 100%;
     }
+    
+    .nav-links-item {
+      align-items: flex-start !important;
+      text-align: left !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
   }
   
+  // Two column layout - columns centered, text left-aligned
   @media (min-width: 640px) and (max-width: 767px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    text-align: center;
+    gap: 4rem;
     justify-items: center;
+    justify-content: center;
+    margin: 0 auto;
     
     > * {
       width: 100%;
       max-width: 100%;
+    }
+    
+    .nav-links-item {
+      align-items: flex-start !important;
+      text-align: left !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+  }
+  
+  // Special layout for 1024px-1217px: Two columns under logo
+  @media (min-width: 1024px) and (max-width: 1217px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 6rem;
+    justify-items: start;
+    justify-content: center;
+    margin: 0 auto;
+    
+    > * {
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .nav-links-item {
+      align-items: flex-start !important;
+      text-align: left !important;
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
     }
   }
 }
