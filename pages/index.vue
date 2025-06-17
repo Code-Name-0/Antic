@@ -1,6 +1,6 @@
 <template>
   <div class="landing-page-layout min-h-screen">
-    <main class="main-content relative z-[1] flex flex-col">
+    <main class="main-content mb-[48px] relative z-[1] flex flex-col">
       <section class="hero-section relative h-screen">
         <LayoutHeroSection />
       </section>
@@ -32,8 +32,7 @@ import LayoutFindRoom from '~/components/layout/LayoutFindRoom.vue';
 </script>
 
 <style lang="scss">
-.main-content{
-}
+
 </style>
 
 
