@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     
-                    <div class=" slideshow-controls flex flex-col items-center mr-10 gap-4" >
+                    <div class=" slideshow-controls flex flex-col items-center gap-4 w-[80%]" >
                         <div class="navigation-buttons flex gap-2">
                             <button class="nav-btn w-12 h-12 cursor-pointer transition-all duration-300 ease-in-out" @click="previousSlide">
                                 <img src="~/assets/images/icons/LeftCircle.svg" alt="Previous" class="w-[90%]">
@@ -235,7 +235,7 @@ const handleSwipe = () => {
 .inspirations-section-container {
     @include container;
     @include desktop{
-        padding-right: 0;
+        // padding-right: 0;
     }
     .examples{
         margin: auto;
