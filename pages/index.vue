@@ -1,6 +1,6 @@
 <template>
   <div class="landing-page-layout min-h-screen">
-    <main class="main-content mb-[48px] relative z-[1] flex flex-col">
+    <main class="main-content  relative z-[1] flex flex-col">
       <section class="hero-section relative h-screen">
         <LayoutHeroSection />
       </section>
@@ -33,6 +33,11 @@ import LayoutFindRoom from '~/components/layout/LayoutFindRoom.vue';
 
 <style lang="scss">
 
+@include mobile {
+  .main-content {
+    margin-bottom: 48px;
+  }
+}
 </style>
 
 
