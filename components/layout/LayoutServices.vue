@@ -25,6 +25,7 @@
     
     @include mobile{
         padding-top: 3rem;
+        padding-bottom: 3rem;
     }
 
     .service-title-container {
