@@ -87,7 +87,7 @@
                             </h2>
                         </div>
                         
-                        <div class="inspiration-description w-[35%]">
+                        <div class="inspiration-description w-[80%]">
                             <p class="description-text-desktop font-normal text-[18px] leading-[25px] tracking-[0px]">
                                 Our experts are keen to stay on top of trends in order to offer you new inspirations for your interior and exterior every day. Remember that to inspire you we have to inspire ourselves and we want to share that with you.
                             </p>
