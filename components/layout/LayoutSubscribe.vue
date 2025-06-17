@@ -98,6 +98,7 @@ const handleSubscribe = () => {
     
     @include mobile {
         padding-bottom: 0rem;
+        padding-top: 3rem;
     }
 
      @include tablet {

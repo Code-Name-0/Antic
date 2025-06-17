@@ -19,8 +19,8 @@
 <style lang="scss">
 .find-room-container {
     @include container;
-    
     @include mobile {
+        padding-top: 3rem;
         padding-bottom: 0rem;
     }
     @include tablet {

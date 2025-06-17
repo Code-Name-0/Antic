@@ -235,7 +235,10 @@ const handleSwipe = () => {
 .inspirations-section-container {
     @include container;
     
-    
+    @include mobile {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
     .examples{
         margin: auto;
     }

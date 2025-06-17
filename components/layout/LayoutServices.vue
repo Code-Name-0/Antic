@@ -23,6 +23,9 @@
     background-color: $cream;
     @include container;
     
+    @include mobile{
+        padding-top: 3rem;
+    }
 
     .service-title-container {
         
