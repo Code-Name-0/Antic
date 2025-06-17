@@ -58,7 +58,7 @@
 
 <style lang="scss">
 .links-container {
-  // Single column layout - left aligned
+  // Single column layout, left aligned
   @media (max-width: 399px) {
     display: flex;
     flex-direction: column;
@@ -73,7 +73,6 @@
     }
   }
   
-  // Two column layout - columns centered, text left-aligned
   @media (min-width: 400px) and (max-width: 639px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -81,9 +80,10 @@
     justify-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 100%;
+    max-width: 500px;
     padding: 0 1rem;
     margin: 0 auto;
+    margin-left: 15%; 
     
     > * {
       width: 100%;
@@ -98,14 +98,15 @@
     }
   }
   
-  // Two column layout - columns centered, text left-aligned
   @media (min-width: 640px) and (max-width: 767px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
     justify-items: center;
     justify-content: center;
+    max-width: 600px; 
     margin: 0 auto;
+    margin-left: 25%; 
     
     > * {
       width: 100%;

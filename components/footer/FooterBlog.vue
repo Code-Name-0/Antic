@@ -32,6 +32,29 @@
   @include mobile {
     align-items: flex-start !important;
   }
+  
+  // Center blog in two-column layout
+  @media (min-width: 400px) and (max-width: 767px) {
+    align-items: center !important;
+    text-align: center;
+    margin: 0 auto;
+    
+    .blog-title {
+      text-align: center !important;
+    }
+    
+    .blog-image {
+      justify-content: center !important;
+    }
+    
+    .post-text {
+      text-align: center !important;
+    }
+    
+    .action {
+      justify-content: center !important;
+    }
+  }
 }
 
 .blog-title {

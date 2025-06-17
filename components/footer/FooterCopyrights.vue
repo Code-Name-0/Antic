@@ -18,7 +18,7 @@
                 <span class="cursor-pointer whitespace-nowrap">Language</span>
             </div>
         </div>
-        <div class="copyright font-normal text-lg leading-[25px] tracking-[0px] text-center md:text-left">
+        <div class="copyright font-normal  text-lg leading-[25px] tracking-[0px] text-left md:text-left">
             © 2021 Agence Dnd
         </div>
 
@@ -49,6 +49,36 @@ import LinkedInIcon from '~/assets/images/icons/Linkedin.svg';
     font-family: $font-varta;
     color: $secondary-text;
     
- 
+    // Center copyright contents in two-column layout
+    @media (min-width: 400px) and (max-width: 767px) {
+        align-items: center !important;
+        text-align: center;
+        
+        .social {
+            justify-content: center;
+        }
+        
+        .legals {
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center;
+            
+            .mobile-only {
+                div {
+                    justify-content: center !important;
+                }
+            }
+        }
+        
+        .copyright {
+            text-align: center !important;
+        }
+    }
+    
+    .copyright{
+        @include mobile {
+            align-items: left;
+        }
+    }
 }
 </style>
