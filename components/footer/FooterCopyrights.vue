@@ -12,7 +12,7 @@
 
     <div class="legals flex flex-col gap-6 w-full md:flex-row md:justify-between md:items-center md:gap-4 lg:flex-row lg:justify-between lg:items-center lg:gap-4">
         <div class="mobile-only">
-            <div class="flex justify-center items-center gap-x-6 gap-y-1 flex-wrap">
+            <div class="flex justify-start items-center gap-x-6 gap-y-1 flex-wrap">
                 <span class="cursor-pointer whitespace-nowrap">Terms of Service</span>
                 <span class="cursor-pointer whitespace-nowrap">Privacy Policy</span>
                 <span class="cursor-pointer whitespace-nowrap">Language</span>

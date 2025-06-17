@@ -39,6 +39,10 @@
   padding-top: 4rem;
   padding-bottom: 2rem;
   
+  @include mobile {
+    padding-bottom: 1rem;
+  }
+  
   @include tablet {
     padding-bottom: 1.5rem;
   }
