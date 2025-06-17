@@ -32,6 +32,8 @@ import LayoutFindRoom from '~/components/layout/LayoutFindRoom.vue';
 </script>
 
 <style lang="scss">
+.main-content{
+}
 </style>
 
 

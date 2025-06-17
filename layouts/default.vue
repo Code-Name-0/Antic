@@ -151,10 +151,6 @@ onMounted(() => {
   
   .mobile-nav-content {
     @include container;
-    &{
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-    }
   }
   
   .mobile-nav-link {

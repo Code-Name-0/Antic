@@ -38,7 +38,7 @@
   // padding-right: 3rem;
     
   @include mobile {
-    padding: $container-y-padding 2rem; 
+    padding: 48px 32px; 
   }
   
   @include tablet {
@@ -47,5 +47,9 @@
   
   @include medium {
     padding: $container-y-padding 3rem; 
+  }
+  
+  @include desktop {
+    padding: 70px 150px 70px 150px;
   }
 }

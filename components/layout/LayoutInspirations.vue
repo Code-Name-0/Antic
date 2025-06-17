@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     
-                    <div class="slideshow-controls flex flex-col items-center gap-4">
+                    <div class=" slideshow-controls flex flex-col items-center mr-10 gap-4" >
                         <div class="navigation-buttons flex gap-2">
                             <button class="nav-btn w-12 h-12 cursor-pointer transition-all duration-300 ease-in-out" @click="previousSlide">
                                 <img src="~/assets/images/icons/LeftCircle.svg" alt="Previous" class="w-[90%]">
@@ -103,8 +103,8 @@
                                 <img src="~/assets/images/icons/RightCircle.svg" alt="Next" class="w-[90%]">
                             </button>
                         </div>
-                        <div class="page-counter">
-                            <span class="counter-text font-normal text-lg leading-[25px] tracking-normal">{{ currentSlide + 1 }} / {{ totalSlides + 1 }}</span>
+                        <div class="page-counter  ">
+                            <span class="counter-text font-normal text-lg  leading-[25px] tracking-normal">{{ currentSlide + 1 }} / {{ totalSlides + 1 }}</span>
                         </div>
                     </div>
                     
@@ -234,10 +234,8 @@ const handleSwipe = () => {
 <style lang="scss">
 .inspirations-section-container {
     @include container;
-    
-    @include mobile {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+    @include desktop{
+        padding-right: 0;
     }
     .examples{
         margin: auto;

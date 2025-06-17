@@ -96,16 +96,6 @@ const handleSubscribe = () => {
 .subscribe-container {
     @include container;
     
-    @include mobile {
-        padding-bottom: 0rem;
-        padding-top: 3rem;
-    }
-
-     @include tablet {
-        padding-bottom: 0rem;
-        padding-top: 3rem;
-    }
-
     .content-section{
       @include tablet {
         align-items: center;

@@ -33,11 +33,6 @@ body {
     padding-top: $section-spacing;
     padding-bottom: $section-spacing;
   }
-  
-  @include mobile {
-    padding-top: calc($section-spacing / 2);
-    padding-bottom: calc($section-spacing / 2);
-  }
 }
 
 // Content container - for regular content sections
@@ -48,11 +43,6 @@ body {
   & {
     padding-top: 3rem;
     padding-bottom: 3rem;
-  }
-  
-  @include mobile {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
   }
 }
 
