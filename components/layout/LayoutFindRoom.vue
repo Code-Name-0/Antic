@@ -20,6 +20,14 @@
 .find-room-container {
     @include container;
     
+    @include mobile {
+        padding-bottom: 0rem;
+    }
+    @include tablet {
+        padding-top: 3rem;
+        padding-bottom: 0rem;
+    }
+    
     .title {
         .title-text {
             font-family: $font-merriweather;

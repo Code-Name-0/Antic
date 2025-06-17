@@ -23,7 +23,7 @@ $container-y-padding: 6rem ;
 $container-top-padding: 4rem;
 $container-bottom-padding: 8rem;
 
-$container-padding: $container-top-padding $container-x-padding $container-bottom-padding $container-x-padding; 
+$container-padding: $container-top-padding $container-y-padding $container-bottom-padding $container-y-padding; 
 
 $mobile: 640px;
 $tablet: 768px;

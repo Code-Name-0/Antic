@@ -3,7 +3,7 @@
     <div class="footer-container">
       <div class="w-full">
         <div class="flex flex-col gap-8 w-full">
-          <div class="footer-content flex flex-col gap-12">
+          <div class="footer-content flex flex-col gap-10">
             <FooterLogo />
             <FooterLinks />
             <FooterBlog />
@@ -24,7 +24,13 @@
   
   background-color: $cream;
   color: $text-white;
-  
+  // margin-top: 1.5rem;
+  @include mobile {
+    margin-top: -3rem;
+  }
+  @include tablet {
+    margin-top: -2.5rem;
+  }
 }
 
 .footer-container {
@@ -34,13 +40,7 @@
   padding-bottom: 2rem;
   
   @include tablet {
-    padding-top: 2.5rem;
     padding-bottom: 1.5rem;
-  }
-  
-  @include desktop {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
   }
   
   .footer-content {

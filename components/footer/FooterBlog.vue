@@ -13,7 +13,7 @@
         />
       </div>
       <div class="post-text text-center lg:text-left" style="max-width: 300px;">
-        <p class="font-normal text-lg leading-[25px] tracking-[0px]" style="max-width: 300px; width: 300px;">
+        <p class="font-normal text-lg leading-[25px] tracking-[0px] max-w-[280px] text-justify" >
           We're taking positive steps to reduce our impact on the planet. For us, that means retailing responsibly. We've set a number of goals to get us there. 
         </p>
       </div>
@@ -29,8 +29,7 @@
 
 <style lang="scss">
 .blog-container {
-  // Left alignment for screens below 400px
-  @media (max-width: 399px) {
+  @include mobile {
     align-items: flex-start !important;
   }
 }
@@ -39,8 +38,7 @@
   font-family: $font-varta;
   color: $brown-dark;
   
-  // Left alignment for screens below 400px
-  @media (max-width: 399px) {
+  @include mobile {
     text-align: left !important;
   }
   
@@ -53,15 +51,13 @@
   font-family: $font-varta;
   color: $secondary-text;
   
-  // Left alignment for screens below 400px
-  @media (max-width: 399px) {
+  @include mobile {
     text-align: left !important;
   }
 }
 
 .action {
-  // Left alignment for screens below 400px
-  @media (max-width: 399px) {
+  @include mobile {
     justify-content: flex-start !important;
   }
   
@@ -71,8 +67,7 @@
 }
 
 .blog-image {
-  // Left alignment for screens below 400px
-  @media (max-width: 399px) {
+  @include mobile {
     justify-content: flex-start !important;
   }
   

@@ -57,7 +57,7 @@ import scrollDownTerracottaIcon from '~/assets/images/icons/scrollDown-terracott
 const scrollToNextSection = () => {
   const findRoomSection = document.querySelector('.find-room-section')
   if (findRoomSection) {
-    findRoomSection.scrollIntoView({
+    findRoomSection.scrollIntoView({ 
       behavior: 'smooth',
       block: 'start'
     })

@@ -10,7 +10,7 @@
                 <p class="subscribe-description text-left">
                   Stay informed of new trends, but also of our various offers.
                 </p>
-                <div class="flex justify-start sm:justify-center lg:justify-start">
+                <div class="flex justify-start">
                   <UiActionLink href="#" text="Learn more" />
                 </div>
               </div>
@@ -49,9 +49,7 @@
               Stay informed of new trends, but also of our various offers.
             </p>
   
-            <div class="flex justify-start">
-              <UiActionLink href="#" text="Learn more"  />
-            </div>
+            <UiActionLink href="#" text="Learn more"  />
   
           </div>
               
@@ -97,7 +95,21 @@ const handleSubscribe = () => {
 <style lang="scss">
 .subscribe-container {
     @include container;
-    padding-bottom: 0 !important;
+    
+    @include mobile {
+        padding-bottom: 0rem;
+    }
+
+     @include tablet {
+        padding-bottom: 0rem;
+        padding-top: 3rem;
+    }
+
+    .content-section{
+      @include tablet {
+        align-items: center;
+      }
+    }
 }
 
 .subscribe-title {
